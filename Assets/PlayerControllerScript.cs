@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-
+    public GameObject loseCanvas;
     protected Joystick joystick;
     public float speed;
     // Start is called before the first frame update
@@ -26,6 +26,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (obj.tag == "Meteorito") {
             Destroy(collision.collider.gameObject);
             Destroy(this.gameObject);
+            loseCanvas.SetActive(true);
         }
 
     }
